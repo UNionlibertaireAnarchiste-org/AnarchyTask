@@ -7,11 +7,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
- 
 
+  const [task,setTask] = useState([]);
+ 
   return (
     <>
-    <Button text="envoyer" color="#008000" />
+        <Input value="valeur" />
+        <Button text="Creer une tache " color="#008000" />
     
     </>
   )
