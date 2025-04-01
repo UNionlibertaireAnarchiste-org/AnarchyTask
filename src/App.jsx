@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <Button />
+    <Button text="envoyer" color="#008000" />
     
     </>
   )
