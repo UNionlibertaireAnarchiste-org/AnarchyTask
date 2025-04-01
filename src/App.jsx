@@ -9,11 +9,14 @@ import './App.css'
 function App() {
 
   const [task,setTask] = useState([]);
- 
+  
   return (
     <>
+      <div className='div-main'>
         <Input value="valeur" />
         <Button text="Creer une tache " color="#008000" />
+      </div>
+        
     
     </>
   )
