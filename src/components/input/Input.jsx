@@ -1,8 +1,8 @@
-export default function Input({value}){
+export default function Input(){
 
     return(
         <>
-            <input type="text" value={value}  />
+            <input type="text"  />
         </>
     )
 }

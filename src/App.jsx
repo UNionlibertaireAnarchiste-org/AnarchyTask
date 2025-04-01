@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <div className='div-main'>
-        <Input value="valeur" />
+        <Input />
         <Button text="Creer une tache " color="#008000" />
       </div>
         
