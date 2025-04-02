@@ -4,8 +4,8 @@
   padding: 0;
 }
 
-.div-main{
-
+.main{
+  margin-top: 25px;
   display: flex;
   justify-content: center;
 }

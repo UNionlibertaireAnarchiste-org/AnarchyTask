@@ -4,7 +4,7 @@ import Button from './components/button/Button'
 import Card from './components/card/Card'
 import Input from './components/input/Input'
 import viteLogo from '/vite.svg'
-import './App.css'
+import fstyle from './app.module.css'
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
   
   return (
     <>
-      <div className='div-main'>
+      <div className={fstyle.main}>
         <Input />
         <Button text="Creer une tache " color="#008000" />
       </div>
