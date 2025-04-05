@@ -9,12 +9,16 @@ import fstyle from './app.module.css'
 function App() {
 
   const [task,setTask] = useState([]);
+
+  const funcAddTask = (e) =>{
+    console.log("test");
+  }
   
   return (
     <>
       <div className={fstyle.main}>
         <Input />
-        <Button text="Creer une tache " color="#008000" />
+        <Button text="Creer une tache " color="#008000" onClick={funcAddTask} />
       </div>
         
     
