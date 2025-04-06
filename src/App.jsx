@@ -7,40 +7,43 @@ import viteLogo from '/vite.svg'
 import fstyle from './app.module.css'
 
 function App() {
-
+  // tableau pour ajouter les taches 
   const [task,setTask] = useState([]);
-  // Pour gerer la v aleur de l'input 
+  // Pour gerer la valeur de l'input 
   const [inputValue , setInputValue] = useState('');
  
   const funcAddTask = (e) =>{
     // console.log("test");
     e.preventDefault();
-    let values = e.target.value;
-    // console.log(values);
-    setTask([...task,values]);
+
+    if(inputValue.trim() != ""){
+      setTask( [...task,inputValue] );
+      setInputValue('');
+    }
 
     
-     console.log(task);
 
     
   }
 
-  
+  // Fonction pour recuperer la valeur 
+  const handleInputChange = (e) =>{
+    setInputValue(e.target.value);
+  }
   
   return (
     <>
       <div className={fstyle.main}>
-        <Input />
-        <Button text="Creer une tache " color="#008000" onClick={funcAddTask} />
+        <form >
+          {/* onChange = indispensable pour rendre les formulaire interactif avec react  */}
+          <Input onChange={handleInputChange} />
+          <Button text="Creer une tache " color="#008000" onClick={funcAddTask} />
+        </form>
+        
       </div>
 
       <div>
-        <h2>Tâches :</h2>
-        <ul>
-          {task.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        
       </div>
         
     
