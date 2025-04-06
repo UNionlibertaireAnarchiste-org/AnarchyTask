@@ -7,6 +7,8 @@ export default function Card( {valueTask} ){
         <>
             <div key={valueTask}>
                 <p> {valueTask} </p>
+                <Button text="Modifier " color="#008000" />
+                <Button text="Supprimer " color="red" />
             </div>
         </>
     )
