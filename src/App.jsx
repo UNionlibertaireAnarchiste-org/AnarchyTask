@@ -40,11 +40,20 @@ function App() {
           <Button text="Creer une tache " color="#008000" onClick={funcAddTask} />
         </form>
         
+        
+        {/* ATTENTION ne pas oubleir de preciser les elements apres map quand il a plusieurs props  */}
+        <div className="task-list">
+          {task.map( (el, index ) => (
+            <Card key={index} valueTask={el} />
+          ))}
+        </div>
+
+       
+        
+       
       </div>
 
-      <div>
-        
-      </div>
+      
         
     
     </>
