@@ -4,7 +4,8 @@ import Button from './components/button/Button'
 import Card from './components/card/Card'
 import Input from './components/input/Input'
 import viteLogo from '/vite.svg'
-import fstyle from './app.module.css'
+// import fstyle from './app.module.css'
+import './app.css'
 
 function App() {
   // tableau pour ajouter les taches 
@@ -33,24 +34,20 @@ function App() {
   
   return (
     <>
-      <div className={fstyle.main}>
+      <div className="main">
         <form >
           {/* onChange = indispensable pour rendre les formulaire interactif avec react  */}
           <Input onChange={handleInputChange} />
           <Button text="Creer une tache " color="#008000" onClick={funcAddTask} />
         </form>
         
-        
-        {/* ATTENTION ne pas oubleir de preciser les elements apres map quand il a plusieurs props  */}
-        <div className="task-list">
+      </div>
+
+      {/* ATTENTION ne pas oubleir de preciser les elements apres map quand il a plusieurs props  */}
+      <div className="task-list">
           {task.map( (el, index ) => (
             <Card key={index} valueTask={el} />
           ))}
-        </div>
-
-       
-        
-       
       </div>
 
       
