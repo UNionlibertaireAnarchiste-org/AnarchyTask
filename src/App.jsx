@@ -21,7 +21,7 @@ function App() {
       setTask( [...task,inputValue] );
       setInputValue('');
     }
-    console.log("parent");
+    // console.log("parent");
 
     
 

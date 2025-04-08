@@ -4,25 +4,31 @@ import fstyle from './card.module.css'
 import { useState } from 'react'
 
 export default function Card( {valueTask, addTask} ){
-
+    // pour faire apparaitre input de la modification
     const [valueModif,setValueModif] = useState(false);
-    const [task,setTask] = useState([]);
+    // Valeur actuelle
+    const [task,setTask] = useState(valueTask);
+    // Pour recuperer la valeur modifier 
     const [inputValue , setInputValue] = useState('');
 
+    // fonction pour faire alterner input visible et invisible 
     const funcInput = (e) =>{
         e.preventDefault();
         // Pour alterner l'affichage de input 
         setValueModif(!valueModif);
-        // console.log(valueTask)
-        console.log("input");
+        
     }
-
+    // Pour recuperer la valeur saisie 
     const handleChange = (e) =>{
         setInputValue(e.target.value);
+        console.log(inputValue);
     }
 
+    // pour modifier la tache 
     const handleModifyTask = () =>{
-        
+        setTask(inputValue);
+        console.log(inputValue)
+        // Pour faire disparaitre le menu 
         setValueModif(false);
     }
     
