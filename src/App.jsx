@@ -21,11 +21,7 @@ function App() {
       setTask( [...task,inputValue] );
       setInputValue('');
     }
-    // console.log("parent");
-
-    
-
-    
+ 
   }
 
   // Fonction pour recuperer la valeur 

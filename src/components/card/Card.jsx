@@ -21,7 +21,7 @@ export default function Card( {valueTask, addTask} ){
     // Pour recuperer la valeur saisie 
     const handleChange = (e) =>{
         setInputValue(e.target.value);
-        console.log(inputValue);
+       
     }
 
     // pour modifier la tache 
