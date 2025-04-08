@@ -3,7 +3,7 @@ import Input from '../input/Input'
 import fstyle from './card.module.css'
 import { useState } from 'react'
 
-export default function Card( {valueTask} ){
+export default function Card( {valueTask, addTask} ){
 
     const [valueModif,setValueModif] = useState(false);
     const [task,setTask] = useState([]);
@@ -13,16 +13,19 @@ export default function Card( {valueTask} ){
         e.preventDefault();
         // Pour alterner l'affichage de input 
         setValueModif(!valueModif);
-        console.log(valueTask)
+        // console.log(valueTask)
+        console.log("input");
     }
 
     const handleChange = (e) =>{
         setInputValue(e.target.value);
     }
 
-    const funcAddTask = ()=>{
+    const handleModifyTask = () =>{
         
+        setValueModif(false);
     }
+    
 
     return(
         <>
@@ -32,7 +35,7 @@ export default function Card( {valueTask} ){
                 {valueModif ? (
                     <>
                        <Input valueTask={valueTask} onChange={handleChange}/> 
-                       <Button text="Modifier " color="#008000" onClick={funcAddTask} />
+                       <Button text="Modifier " color="#008000" onClick={handleModifyTask} />
                     </>
                 ): (
                     <>

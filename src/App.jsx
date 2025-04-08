@@ -21,6 +21,7 @@ function App() {
       setTask( [...task,inputValue] );
       setInputValue('');
     }
+    console.log("parent");
 
     
 
@@ -46,7 +47,7 @@ function App() {
       {/* ATTENTION ne pas oubleir de preciser les elements apres map quand il a plusieurs props  */}
       <div className="task-list">
           {task.map( (el, index ) => (
-            <Card key={index} valueTask={el} />
+            <Card key={index} valueTask={el} addTask={funcAddTask} />
           ))}
       </div>
 
