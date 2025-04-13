@@ -12,6 +12,8 @@ function App() {
   const [task,setTask] = useState([]);
   // Pour gerer la valeur de l'input 
   const [inputValue , setInputValue] = useState('');
+  // Pour recuperer la valeur de input de l'enfant 
+  const [inputValueChild,setInputValueChild] = useState('');
  
   const funcAddTask = (e) =>{
     // console.log("test");
@@ -24,9 +26,15 @@ function App() {
  
   }
 
-  // Fonction pour recuperer la valeur 
+  // Fonction pour recuperer la valeur saisie 
   const handleInputChange = (e) =>{
     setInputValue(e.target.value);
+  }
+
+  // FONCTION POUR RECUPERER LA VALEUR DE L'ENFANT 
+  const messageChildren = (message) =>{
+    setInputValueChild(message);
+    console.log(`La valeur de l'enfant est ${message} `)
   }
   
   return (
@@ -43,7 +51,7 @@ function App() {
       {/* ATTENTION ne pas oubleir de preciser les elements apres map quand il a plusieurs props  */}
       <div className="task-list">
           {task.map( (el, index ) => (
-            <Card key={index} valueTask={el} addTask={funcAddTask} />
+            <Card key={index} valueTask={el} addTask={funcAddTask} onMessage={messageChildren}/>
           ))}
       </div>
 

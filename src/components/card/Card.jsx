@@ -3,11 +3,11 @@ import Input from '../input/Input'
 import fstyle from './card.module.css'
 import { useState } from 'react'
 
-export default function Card( {valueTask, addTask} ){
+export default function Card( {valueTask, addTask, onMessage} ){
     // pour faire apparaitre input de la modification
     const [valueModif,setValueModif] = useState(false);
     // Valeur actuelle
-    const [task,setTask] = useState(valueTask);
+    // const [task,setTask] = useState(valueTask);
     // Pour recuperer la valeur modifier 
     const [inputValue , setInputValue] = useState('');
 
@@ -26,9 +26,12 @@ export default function Card( {valueTask, addTask} ){
 
     // pour modifier la tache 
     const handleModifyTask = () =>{
-        setTask(inputValue);
-        console.log(inputValue)
-        // Pour faire disparaitre le menu 
+       
+
+        if(onMessage){
+            onMessage(inputValue);
+            setInputValue('');
+        }
         setValueModif(false);
     }
     
