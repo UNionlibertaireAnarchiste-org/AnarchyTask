@@ -32,13 +32,18 @@ function App() {
   }
 
   // FONCTION POUR RECUPERER LA VALEUR DE L'ENFANT 
-  const messageChildren = (message) =>{
+  const messageChildren = (message,index) =>{
     setInputValue(message);
     console.log(`La valeur de l'enfant est ${message} `)
-    // console.log(`apres : ${inputValue} `)
+    
     if(message.trim() != ""){
-      setTask( [...task,message] );
-      console.log(`cela fonctionne ${task} `);
+      // Creer un nouveau tableau 
+      const newTask = [...task];
+      // remplacer la valeur 
+      newTask[index] = message;
+      // Ajoute 
+      setTask(newTask);
+      setInputValue('');
     }
   }
   
@@ -56,7 +61,7 @@ function App() {
       {/* ATTENTION ne pas oubleir de preciser les elements apres map quand il a plusieurs props  */}
       <div className="task-list">
           {task.map( (el, index ) => (
-            <Card key={index} valueTask={el} addTask={funcAddTask} onMessage={messageChildren}/>
+            <Card key={index} valueTask={el} addTask={funcAddTask} onMessage={messageChildren} index={index}/>
           ))}
       </div>
 

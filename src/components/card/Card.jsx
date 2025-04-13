@@ -3,7 +3,7 @@ import Input from '../input/Input'
 import fstyle from './card.module.css'
 import { useState } from 'react'
 
-export default function Card( {valueTask, addTask, onMessage} ){
+export default function Card( {valueTask, addTask, onMessage,index} ){
     // pour faire apparaitre input de la modification
     const [valueModif,setValueModif] = useState(false);
     // Valeur actuelle
@@ -29,7 +29,7 @@ export default function Card( {valueTask, addTask, onMessage} ){
        
 
         if(onMessage){
-            onMessage(inputValue);
+            onMessage(inputValue,index);
             setInputValue('');
         }
         setValueModif(false);
@@ -44,7 +44,7 @@ export default function Card( {valueTask, addTask, onMessage} ){
                 {valueModif ? (
                     <>
                        <Input valueTask={valueTask} onChange={handleChange}/> 
-                       <Button text="Modifier " color="#008000" onClick={handleModifyTask} />
+                       <Button text="Modifier " color="#008000" onClick={handleModifyTask}  index={index}/>
                     </>
                 ): (
                     <>
