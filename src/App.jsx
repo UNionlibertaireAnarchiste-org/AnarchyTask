@@ -34,7 +34,7 @@ function App() {
   // FONCTION POUR RECUPERER LA VALEUR DE L'ENFANT 
   const messageChildren = (message,index) =>{
     setInputValue(message);
-    console.log(`La valeur de l'enfant est ${message} `)
+    // console.log(`La valeur de l'enfant est ${message} `)
     
     if(message.trim() != ""){
       // Creer un nouveau tableau 
