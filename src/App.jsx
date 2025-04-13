@@ -13,7 +13,7 @@ function App() {
   // Pour gerer la valeur de l'input 
   const [inputValue , setInputValue] = useState('');
   // Pour recuperer la valeur de input de l'enfant 
-  const [inputValueChild,setInputValueChild] = useState('');
+  // const [inputValueChild,setInputValueChild] = useState('');
  
   const funcAddTask = (e) =>{
     // console.log("test");
@@ -33,8 +33,13 @@ function App() {
 
   // FONCTION POUR RECUPERER LA VALEUR DE L'ENFANT 
   const messageChildren = (message) =>{
-    setInputValueChild(message);
+    setInputValue(message);
     console.log(`La valeur de l'enfant est ${message} `)
+    // console.log(`apres : ${inputValue} `)
+    if(message.trim() != ""){
+      setTask( [...task,message] );
+      console.log(`cela fonctionne ${task} `);
+    }
   }
   
   return (
