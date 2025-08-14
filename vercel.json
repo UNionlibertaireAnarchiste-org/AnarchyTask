@@ -1,0 +1,23 @@
+{
+  "name": "taskmaster-pro",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_APP_NAME": "TaskMaster Pro",
+    "VITE_APP_VERSION": "2.0.0"
+  }
+}

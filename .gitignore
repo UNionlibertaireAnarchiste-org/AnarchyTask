@@ -1,4 +1,6 @@
-# Logs
+# 🏴‍☠️ AnarchyTasks - Fichiers à ignorer
+
+# Logs révolutionnaires
 logs
 *.log
 npm-debug.log*
@@ -7,18 +9,62 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dépendances
 node_modules
+.pnpm-store
+
+# Build de production
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Base de données locale (données personnelles)
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache et temporaires
+.cache
+.temp
+.tmp
+
+# Environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Éditeurs
 .vscode/*
 !.vscode/extensions.json
 .idea
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Autres
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.old
+
+# Données utilisateur (respecter la vie privée)
+anarchytasks.db
+anarchyauth.db
+anarchyteams.db

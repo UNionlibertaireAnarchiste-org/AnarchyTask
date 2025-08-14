@@ -3,63 +3,76 @@ import Input from '../input/Input'
 import fstyle from './card.module.css'
 import { useState } from 'react'
 
-export default function Card( {valueTask, addTask, onMessage,index} ){
-    // pour faire apparaitre input de la modification
-    const [valueModif,setValueModif] = useState(false);
-    // Valeur actuelle
-    // const [task,setTask] = useState(valueTask);
-    // Pour recuperer la valeur modifier 
-    const [inputValue , setInputValue] = useState('');
+export default function Card({ task, onUpdate, onDelete, onToggle }) {
+    const [isEditing, setIsEditing] = useState(false);
+    const [editValue, setEditValue] = useState(task.text);
 
-    // fonction pour faire alterner input visible et invisible 
-    const funcInput = (e) =>{
-        e.preventDefault();
-        // Pour alterner l'affichage de input 
-        setValueModif(!valueModif);
-        
-    }
-    // Pour recuperer la valeur saisie 
-    const handleChange = (e) =>{
-        setInputValue(e.target.value);
-       
+    const handleEdit = () => {
+        setIsEditing(true);
+        setEditValue(task.text);
     }
 
-    // pour modifier la tache 
-    const handleModifyTask = () =>{
-       
-
-        if(onMessage){
-            onMessage(inputValue,index);
-            setInputValue('');
+    const handleSave = () => {
+        if (editValue.trim()) {
+            onUpdate(task.id, editValue);
+            setIsEditing(false);
         }
-        setValueModif(false);
     }
-    
 
-    return(
-        <>
-            <div key={valueTask} className={fstyle.card}>
+    const handleCancel = () => {
+        setIsEditing(false);
+        setEditValue(task.text);
+    }
 
-                {/* Quand il n'y a pas de champs input  */}
-                {valueModif ? (
-                    <>
-                       <Input valueTask={valueTask} onChange={handleChange}/> 
-                       <Button text="Modifier " color="#008000" onClick={handleModifyTask}  index={index}/>
-                    </>
-                ): (
-                    <>
-                      <p> {valueTask} </p>
-                        <Button text="Modifier " color="#008000" onClick={funcInput} />
-                        <Button text="Supprimer " color="red" />
-                     
-                    </>
-                  )
-                }
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSave();
+        } else if (e.key === 'Escape') {
+            handleCancel();
+        }
+    }
 
-             
+    return (
+        <div className={`${fstyle.card} ${task.completed ? fstyle.completed : ''}`}>
+            <div className={fstyle.taskContent}>
+                <input 
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => onToggle(task.id)}
+                    className={fstyle.checkbox}
+                />
                 
-                
+                {isEditing ? (
+                    <div className={fstyle.editMode}>
+                        <Input 
+                            value={editValue}
+                            onChange={(e) => setEditValue(e.target.value)}
+                            onKeyDown={handleKeyPress}
+                            autoFocus
+                        />
+                        <div className={fstyle.editButtons}>
+                            <Button text="✊" color="#2d5016" onClick={handleSave} />
+                            <Button text="🚫" color="#6c757d" onClick={handleCancel} />
+                        </div>
+                    </div>
+                ) : (
+                    <div className={fstyle.taskText}>
+                        <span className={task.completed ? fstyle.completedText : ''}>
+                            {task.text}
+                        </span>
+                        <small className={fstyle.timestamp}>
+                            {new Date(task.createdAt).toLocaleDateString('fr-FR')}
+                        </small>
+                    </div>
+                )}
             </div>
-        </>
+
+            {!isEditing && (
+                <div className={fstyle.actions}>
+                    <Button text="✏️" color="#ff6b35" onClick={handleEdit} />
+                    <Button text="💥" color="#8b0000" onClick={() => onDelete(task.id)} />
+                </div>
+            )}
+        </div>
     )
 }
