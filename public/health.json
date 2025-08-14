@@ -1,0 +1,21 @@
+{
+  "status": "healthy",
+  "application": "AnarchyTasks",
+  "version": "2.0.0-revolution",
+  "description": "Application révolutionnaire de gestion de tâches anarchiste",
+  "philosophy": "L'anarchie, c'est l'ordre sans domination",
+  "features": {
+    "authentication": "Décentralisée (IndexedDB)",
+    "collaboration": "Horizontale entre camarades",
+    "privacy": "100% locale, 0% surveillance",
+    "freedom": "Code open source, données utilisateur"
+  },
+  "principles": [
+    "Autonomie numérique",
+    "Collaboration horizontale", 
+    "Résistance aux systèmes oppressifs",
+    "Respect de la vie privée"
+  ],
+  "timestamp": "2025-08-14T10:00:00Z",
+  "message": "Vive la révolution numérique ! 🏴‍☠️"
+}

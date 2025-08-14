@@ -1,0 +1,30 @@
+# 🏴‍☠️ AnarchyTasks - Robots.txt Révolutionnaire
+
+# Bienvenue aux robots anarchistes !
+User-agent: *
+Allow: /
+
+# Pas de surveillance commerciale
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+# Interdiction aux robots de surveillance
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: TwitterBot
+Disallow: /
+
+User-agent: LinkedInBot
+Disallow: /
+
+# Sitemap révolutionnaire
+Sitemap: https://anarchytasks.onrender.com/sitemap.xml
+
+# Message anarchiste
+# « L'anarchie, c'est l'ordre sans domination »
+# « Nos données nous appartiennent, point final »
+# Vive la révolution numérique ! ✊
