@@ -1,0 +1,89 @@
+{
+  "name": "AnarchyTasks - Révolution Numérique",
+  "short_name": "AnarchyTasks",
+  "description": "Application révolutionnaire de gestion de tâches anarchiste. L'anarchie, c'est l'ordre sans domination.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#dc3545",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Interface desktop anarchiste"
+    },
+    {
+      "src": "/screenshot-mobile.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Interface mobile révolutionnaire"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Créer une tâche",
+      "short_name": "Nouvelle tâche",
+      "description": "Libérer une nouvelle idée révolutionnaire",
+      "url": "/?action=create",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any"
+        }
+      ]
+    },
+    {
+      "name": "Mes équipes",
+      "short_name": "Équipes",
+      "description": "Rejoindre la collaboration anarchiste",
+      "url": "/?action=teams",
+      "icons": [
+        {
+          "src": "/favicon.svg", 
+          "sizes": "any"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-new"
+  }
+}
