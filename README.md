@@ -173,7 +173,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 ## 👥 Auteurs
 
 - **Tatiana Juin** - Développement initial
-- **Kiro AI** - Améliorations SaaS et optimisations
+- **Calyps* - Améliorations SaaS et optimisations
 
 ---
 
